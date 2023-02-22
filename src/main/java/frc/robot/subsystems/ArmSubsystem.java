@@ -1,23 +1,15 @@
 package frc.robot.subsystems;
 
 import frc.robot.Constants.ArmConstants;
-//import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-//import com.revrobotics.CANSparkMax;
-//import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class ArmSubsystem extends SubsystemBase {
-
-
-
-
-
     public static float[] getArmPosition(float Theta1, float Theta2) {
 
         // Calculations done in Radians
-        float Hypotenus = 2 * ArmConstants.ARMLENGTH1 * (float) Math.sin(Theta2 / 2 * Math.PI / 180);
-        float Theta1_1 = (float) Math.asin((ArmConstants.ARMLENGTH1 / Hypotenus) * Math.sin(Theta2 * Math.PI / 180));
+        float Hypotenus = 2 * ArmConstants.ARM_LENGTH1_INCHES * (float) Math.sin(Theta2 / 2 * Math.PI / 180);
+        float Theta1_1 = (float) Math.asin((ArmConstants.ARM_LENGTH1_INCHES / Hypotenus) * Math.sin(Theta2 * Math.PI / 180));
         float Theta1_2 = Theta1 - Theta1_1;
     
         // Define an arry of values

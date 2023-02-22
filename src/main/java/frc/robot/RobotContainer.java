@@ -14,7 +14,7 @@ public class RobotContainer {
   private final DriveSubsystem DriveSubsystem = new DriveSubsystem();
   private final LimelightSubsystem LimelightSubsystem = new LimelightSubsystem();
 
-  PS4Controller ps4 = new PS4Controller(Constants.Driver_Controller);
+  PS4Controller ps4 = new PS4Controller(Constants.DRIVER_CONTROLLER);
   public RobotContainer() {
     configureBindings();
     DriveSubsystem.initialize();

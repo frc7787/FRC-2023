@@ -26,7 +26,7 @@ public final class Constants {
     public static final int THETA1_MIN = 6;
     public static final int THETA2_MIN = 7;
     public static final int ARM_LENGTH1_INCHES = 40; 
-    public static final int ARMLENGTH2 = ARMLENGTH1; // Note if different lengths math will change
+    public static final int ARMLENGTH2 = ARM_LENGTH1_INCHES; // Note if different lengths math will change
 
   }
 
