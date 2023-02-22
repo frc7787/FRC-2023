@@ -9,14 +9,10 @@ public class FollowTargets extends CommandBase {
     private DriveSubsystem m_DriveSubsystem;
     private LimelightSubsystem m_LimelightSubsystem;
   
-    /**
-     * Creates a new ExampleCommand.
-     *
-     * @param subsystem The subsystem used by this command.
-     */
     public FollowTargets(DriveSubsystem subsystem_drive, LimelightSubsystem subsystem_limelight) {
       m_DriveSubsystem = subsystem_drive;
       m_LimelightSubsystem= subsystem_limelight;
+
       // Use addRequirements() here to declare subsystem dependencies.
       addRequirements(subsystem_drive);
       double targetPosition = m_LimelightSubsystem.getTargets()[0];

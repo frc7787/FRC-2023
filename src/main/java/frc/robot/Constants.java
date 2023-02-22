@@ -16,36 +16,36 @@ package frc.robot;
 public final class Constants {
 
   public static final class OperatorConstants {
-    public static final int KDRIVERCONTROLLERPORT = 0;
+    public static final int K_DRIVER_CONTROLLER_PORT = 0;
   }
 
   public static final class ArmConstants {
 
-    public static final int THETA1MAX = 5;
-    public static final int THETA2MAX = 4;
-    public static final int THETA1MIN = 6;
-    public static final int THETA2MIN = 7;
-    public static final int ARMLENGTH1 = 40; // Inches
-    public static final int ARMLENGTH2 = ARMLENGTH1;// Note if different lengths math will change
+    public static final int THETA1_MAX = 5;
+    public static final int THETA2_MAX = 4;
+    public static final int THETA1_MIN = 6;
+    public static final int THETA2_MIN = 7;
+    public static final int ARM_LENGTH1_INCHES = 40; 
+    public static final int ARMLENGTH2 = ARMLENGTH1; // Note if different lengths math will change
 
   }
 
   public static final class DriveConstants {
-    public static final int MOTORLEFT1PORT = 0;
-    public static final int MOTORLEFT2PORT = 1;
-    public static final int MOTORRIGHT1PORT = 2;
-    public static final int MOTORRIGHT2PORT = 3;
+    public static final int MOTOR_LEFT1_PORT = 0;
+    public static final int MOTOR_LEFT2_PORT = 1;
+    public static final int MOTOR_RIGHT1_PORT = 2;
+    public static final int MOTOR_RIGHT2_PORT = 3;
 
-    public static final int[] ENCODERPORTSLEFT = {0, 1};
-    public static final int[] ENCODERPORTSRIGHT = {2, 3};
-    public static final boolean ENCODERREVERSEDLEFT = false;
-    public static final boolean ENCODERREVERSEDRIGHT= true;
+    public static final int[] ENCODER_PORTS_LEFT = {0, 1};
+    public static final int[] ENCODER_PORTS_RIGHT = {2, 3};
+    public static final boolean ENCODER_REVERSED_LEFT = false;
+    public static final boolean ENCODER_REVERSED_RIGHT= true;
 
-    public static final double ADAPTIVESTEERINGSENSITIVITY = 0.002;
+    public static final double ADAPTIVE_STEERING_SENSITIVITY = 0.002;
 
-    public static final int ENCODERTICKSPERREV= 1024;
+    public static final int ENCODER_TICKS_PER_REV= 1024;
     
-    public static final double ENCODERDISTANCEPERPULSEINCHES =3.0;
+    public static final double ENCODER_DISTANCE_PER_PULSE_INCHES =3.0;
         
   }
   public static final class ButtonMappings {
@@ -64,6 +64,6 @@ public final class Constants {
     public static final int PS = 12;
     public static final int TOUCHPAD = 13;
   }
-  public static final int Driver_Controller = 0;
+  public static final int DRIVER_CONTROLLER = 0;
 
 }
