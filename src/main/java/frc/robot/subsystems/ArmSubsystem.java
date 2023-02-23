@@ -31,10 +31,18 @@ public class ArmSubsystem extends SubsystemBase {
             // Return the values
             
           }
-        else {
-          System.out.println("Please enter a valid angle.");
+        else if (Theta1 < 30 || Theta1 > 135) {
+          System.out.println("Please enter a value for Theta1 that is between 30 and 100 degrees.");
           return null;
           }
+        else if (Theta2 < 30 || Theta2 > 180) {
+          System.out.println("Please enter a value for Theta2 that is between 30 and 180 degrees.");
+          return null;
+        }
+        else {
+          System.out.println("Please enter a valid angle of type float");
+          return null;
+        }
       }
     
       public static void main(String[] args) {
