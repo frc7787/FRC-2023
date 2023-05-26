@@ -30,8 +30,7 @@ public class MotorCmd extends CommandBase{
     public void execute() {
         if (Timer.getMatchTime()> 3+startTime) {
             isComplete = true;
-        }
-        else {
+        } else {
             subsystem.pwrSet(pwr);
             Timer.delay(3);
             isComplete = true;
@@ -42,7 +41,6 @@ public class MotorCmd extends CommandBase{
       SmartDashboard.putNumber(getName(), startTime);
       SmartDashboard.putNumber(getName(), Timer.getMatchTime());
 
-      
     }
   
     // Called once the command ends or is interrupted.

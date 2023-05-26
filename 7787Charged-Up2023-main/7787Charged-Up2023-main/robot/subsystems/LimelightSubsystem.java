@@ -14,31 +14,31 @@ public class LimelightSubsystem extends SubsystemBase{
     static NetworkTableEntry Ty = table.getEntry("ty");
     static NetworkTableEntry Ta = table.getEntry("ta");
     static NetworkTableEntry Pipeline = table.getEntry("pipeline");
-    static NetworkTableEntry Tv = table.getEntry("tv"); //are there any valid targets
-    
+    static NetworkTableEntry Tv = table.getEntry("tv"); // Check for valid entries.
     public  double[] getTargets(){
 
-        //read values periodically
+        // Read values
         double x = Tx.getDouble(0.0);
         double y = Ty.getDouble(0.0);
         double area = Ta.getDouble(0.0);
         double[] returnArray= {x,y,area};
 
-        //post to smart dashboard periodically
+        // Post to smart dashboard
         SmartDashboard.putNumber("LimelightX", x);
         SmartDashboard.putNumber("LimelightY", y);
         SmartDashboard.putNumber("LimelightArea", area);
 
         return returnArray;
     }
+
     public static void setPipeline(int m_pipeLine) {
         Pipeline.setNumber(m_pipeLine);
     } 
     
     public boolean hasTargets(){
-        boolean returnBool =false;
-        if((double)Tv.getNumber(0)>0){//for some reason tv.getnumber must be mapped to double, not int or boolean
-            returnBool=true;
+        boolean returnBool = false;
+        if((double)Tv.getNumber(0)>0){ // Must be mapped to double
+            returnBool = true;
         }
         return returnBool;
     }

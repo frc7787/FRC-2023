@@ -40,4 +40,3 @@ public class StopMotor extends CommandBase {
       return true;
     }
   }
-  

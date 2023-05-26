@@ -11,17 +11,6 @@ public class NavXSubsystem extends SubsystemBase{
 
     public void ahrsInit() {
         try {
-			/***********************************************************************
-			 * navX-MXP:
-			 * - Communication via RoboRIO MXP (SPI, I2C, TTL UART) and USB.            
-			 * - See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface.
-			 * 
-			 * navX-Micro:
-			 * - Communication via I2C (RoboRIO MXP or Onboard) and USB.
-			 * - See http://navx-micro.kauailabs.com/guidance/selecting-an-interface.
-			 * 
-			 * Multiple navX-model devices on a single robot are supported.
-			 ************************************************************************/
             ahrs = new AHRS(SPI.Port.kMXP); 
         } catch (RuntimeException ex ) {
             SmartDashboard.putString("Error instantiating navX MXP:  ", ex.getMessage());

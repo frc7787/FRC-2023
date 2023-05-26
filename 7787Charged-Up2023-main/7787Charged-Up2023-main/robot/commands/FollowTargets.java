@@ -35,7 +35,7 @@ public class FollowTargets extends CommandBase {
       double targetPosition = m_LimelightSubsystem.getTargets()[0];
       
       // Rotates towards the target depending on where the target is
-      double rot = Math.min(Math.max((targetPosition/Math.abs(targetPosition))*Math.sqrt(Math.abs(targetPosition/20)),-0.8),0.8);
+      double rot = Math.min(Math.max((targetPosition / Math.abs(targetPosition)) * Math.sqrt(Math.abs(targetPosition / 20)),-0.8),0.8);
       m_DriveSubsystem.arcadeDriveSquared(0.0,-rot);
 
     }

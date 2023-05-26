@@ -17,7 +17,6 @@ import java.util.function.DoubleSupplier;
 
 
 //Set up all the system objects (motors and encoders) 
-//note, constants need to be updated as of Feb 20
 public class DriveSubsystem extends SubsystemBase {
 
   NavXSubsystem navX;
@@ -59,29 +58,30 @@ public class DriveSubsystem extends SubsystemBase {
   public DriveSubsystem() {
 
     // Sets the distance per pulse for the encoders
-    //compressor.disable();
     EncoderLeft.setDistancePerPulse(DriveConstants.ENCODER_DISTANCE_PER_PULSE_INCHES);
     EncoderRight.setDistancePerPulse(DriveConstants.ENCODER_DISTANCE_PER_PULSE_INCHES);
     
   }
   public double getLeftEncoderDistance(){
-    double encoderDistance = EncoderLeft.getDistance();
-    SmartDashboard.putNumber("leftEncoder Distance", encoderDistance);
+    double encoderDistanceLeft = EncoderLeft.getDistance();
+    SmartDashboard.putNumber("Left Encoder Distance", encoderDistanceLeft);
     return encoderDistance;
   }
   public double getRightEncoderDistance(){
+    double encoderDistanceRight = EnocderRight.getDistance();
+    SmartDashboard.putNumber("Right Encoder Distance", encoderDistanceRight);
     return EncoderRight.getDistance();
   }
 
-  // simple arcade drive with squared inputs
+  // Simple arcade drive with squared inputs
   public void arcadeDriveSquared(Double fwd, Double rot) {
-    SmartDashboard.putNumber("encoder left", EncoderLeft.get());
+    SmartDashboard.putNumber("Encoder Left", EncoderLeft.get());
 
     DiffDrive.arcadeDrive(Math.abs(fwd) * fwd,Math.abs(rot) * rot);
 
   }
   public void arcadeDrive(Double fwd, Double rot) {
-    SmartDashboard.putNumber("encoder left", EncoderLeft.get());
+    SmartDashboard.putNumber("Encoder Left", EncoderLeft.get());
 
     DiffDrive.arcadeDrive(fwd, rot);
 
@@ -91,19 +91,18 @@ public class DriveSubsystem extends SubsystemBase {
   //based on the real speed of the tracks as read by the encoders
   public void arcadeDriveAdaptiveSteering(Double fwd, Double rot) {
 
-    double adaptedrot= rot / (1 + ((EncoderLeft.getRate() + EncoderRight.getRate()) * DriveConstants.ADAPTIVE_STEERING_SENSITIVITY));
+    double adaptedrot = rot / (1 + ((EncoderLeft.getRate() + EncoderRight.getRate()) * DriveConstants.ADAPTIVE_STEERING_SENSITIVITY));
     DiffDrive.arcadeDrive(Math.abs(fwd) * fwd, adaptedrot);
 
   }
   
   // Untested, this should use PID to make it drive straight
-  //it probably will have some issues as some of the values approach zero
-  PIDController drivePID = new PIDController(0, 0, 0);//currently set to zero just to test how it reacts without PID
-  PIDController drivePositionLeftPID = new PIDController(1, 0.0, 0.010);//currently set 1 for no ID feedback //Feb28
-  PIDController drivePositionRightPID = new PIDController(1, 0.00, 0.010);//currently set 1 for no ID feedback //Feb28
+  
+  PIDController drivePID = new PIDController(0, 0, 0); // Currently set to zero just to test how it reacts without PID
+  PIDController drivePositionLeftPID = new PIDController(1, 0.0, 0.010); // Currently set 1 for no ID feedback //Feb28
+  PIDController drivePositionRightPID = new PIDController(1, 0.00, 0.010); // Currently set 1 for no ID feedback //Feb28
 
   public CommandBase driveToPositionCommand(double m_fwdInches){  // **** Changed from void to Command for Testing
-    //double adaptedrot= rot/(1+((EncoderLeft.getRate()+EncoderRight.getRate())*DriveConstants.ADAPTIVE_STEERING_SENSITIVITY));
     int m_LeftOffset=EncoderLeft.get();
     int m_RightOffset=EncoderRight.get();
 
@@ -120,22 +119,16 @@ public class DriveSubsystem extends SubsystemBase {
   public void balanceRobot() {
 
     if (Math.abs(navX.navXPitch()) > 5) {
-
       while(navX.navXPitch()>9) {
         driveToPositionCommand(1);
-      }
-
+      } 
       while(navX.navXPitch()<-9) {
         driveToPositionCommand(-1);
       }
-
-    }
-    else {
+    } else {
       arcadeDriveAdaptiveSteering(0.0,0.0);
     } 
   }
-
-
 
   public void driveToEncoderPosition(Double m_leftEncoderTarget,double m_rightEncoderTarget){  // **** Changed from void to Command for Testing
     

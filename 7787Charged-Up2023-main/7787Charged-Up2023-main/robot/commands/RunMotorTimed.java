@@ -11,15 +11,10 @@ public class RunMotorTimed extends CommandBase {
 
     // Creates an instance of the drive subsystem
     private DriveSubsystem m_subsystem;
-
     private Timer timer1;
     private double timerDuration;
     private boolean timerExpired=false;
     private static double power;
-
-    
-    
-    // Creates the dependencies for the command.
 
     public RunMotorTimed(DriveSubsystem subsystem) {
       timerDuration=1;
@@ -28,7 +23,6 @@ public class RunMotorTimed extends CommandBase {
 
       m_subsystem = subsystem;
       addRequirements(m_subsystem);
-      //m_subsystem.arcadeDriveSquared(1.0,0.0);
     }
     
     public RunMotorTimed(DriveSubsystem subsystem, double l_seconds) {
@@ -38,7 +32,6 @@ public class RunMotorTimed extends CommandBase {
 
       m_subsystem = subsystem;
       addRequirements(m_subsystem);
-      //m_subsystem.arcadeDriveSquared(1.0,0.0);
     }
     public RunMotorTimed(DriveSubsystem subsystem, double l_seconds, double l_power) {
       timerDuration =l_seconds;
@@ -47,7 +40,6 @@ public class RunMotorTimed extends CommandBase {
 
       m_subsystem = subsystem;
       addRequirements(m_subsystem);
-      //m_subsystem.arcadeDriveSquared(1.0,0.0);
     }
   
     // Called when the command is initialized
@@ -79,4 +71,3 @@ public class RunMotorTimed extends CommandBase {
       return timerExpired;
     }
   }
-  

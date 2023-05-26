@@ -1,13 +1,9 @@
+// Cleaned
 package frc.robot;
 
 public final class Constants {
 
-  public static final class OperatorConstants {
-
-    // Drive Controll Port
-    //public static final int K_DRIVER_CONTROLLER_PORT = 0;
-    
-  }
+  public static final class OperatorConstants {}
 
   // Constants for Arm Subsystem
   public static final class ArmConstants {
@@ -18,14 +14,14 @@ public final class Constants {
     public static final int THETA1_MIN = 30;
     public static final int THETA2_MIN = 30;
 
-    public static final int THETA1_START = 98; //ANGLE FROM BASE BACK TO SEGMENT 1
-    public static final int THETA2_START = 10;//ANGLE FROM ARM SEGMENT  1 TO 2
-    public static final int AZIMUTH_START = -9;//for claw open positon
+    public static final int THETA1_START = 98; // Angle from base to segment 1
+    public static final int THETA2_START = 10; // Angle from segment 1 to 2
+    public static final int AZIMUTH_START = -9; // For claw open position
 
   
 
     // Arm Lengths
-    public static final int ARM_LENGTH1 = 40; // Arm Length is in inches
+    public static final int ARM_LENGTH1 = 40; // Arm length in inches
     public static final int ARM_LENGTH2 = ARM_LENGTH1; 
 
     // Motor ID's
@@ -34,7 +30,7 @@ public final class Constants {
     public static final int ELBOW_MOTOR_ID = 4;
     public static final int CLAW_MOTOR_ID = 5;
 
-    //Resseting Constants
+    // Resseting Constants
     public static final Double RESETTING_SPEED = 0.1;
 
     // Limit Switch Directions ; True = Forward, False = Reverse
@@ -43,22 +39,17 @@ public final class Constants {
     public static final boolean ELBOW_LIMIT_SWITCH_DIRECTION = false;
     public static final boolean CLAW_LIMIT_SWITCH_DIRECTION = false;
 
-    // degree conversions
+    // Degree conversions
     public static final double AZIMUTH_DEGREES_PER_REVOLUTION= 152.3/90;
     public static final double SHOULDER_DEGREES_PER_REVOLUTION= (22.9-6)/20;
     public static final double ELBOW_DEGREES_PER_REVOLUTION = 153.0/100;
-     //1;(44-16)/20;
+    // 1 ; (44-16)/20;
     public static final double CLAW_DEGREES_PER_REVOLUTION= 1;
-
-
-
-
 
     // Limit Offsets
     public static final int AZIMUTH_OFFSET = -15;
     public static final int SHOULDER_OFFSET = 130;
     public static final int ELBOW_OFFSET = 10;
-
   }
 
   // Constants for drive subsystem
@@ -85,17 +76,18 @@ public final class Constants {
     public static final int ENCODER_TICKS_PER_REV= 1024;
     
     // Encoder Distance
-    public static final double ENCODER_DISTANCE_PER_PULSE_INCHES =0.041;//0.041 feb 28th
+    public static final double ENCODER_DISTANCE_PER_PULSE_INCHES =0.041; 
 
     // Encoder Ticks Per Degree
-    public static final double ENCODER_ROTATION_PER_PULSE_DEGREES = 0.255;// 0.255 feb 28
-    // wheel base 18.42" = 1411 ticks per 360
+    public static final double ENCODER_ROTATION_PER_PULSE_DEGREES = 0.255;
+    // Wheel base 18.42" = 1411 ticks per 360
 
     // Gear Ratios
     public static final double LOW_GEAR_RATIO = 4;
     public static final double HIGH_GEAR_RATIO = 1;
         
   }
+
   public static final class ButtonMappings {
 
     // Button Mappings
